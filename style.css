@@ -1,0 +1,292 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s ease; /* Smooth transition for theme change */
+}
+
+/* Light Theme */
+body {
+    background: linear-gradient(135deg, #6dd5fa, #2980b9); /* Light gradient background */
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#panel {
+    width: 90%;
+    height: 90%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.elem h2 {
+    font-weight: 500;
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+#ptop {
+    width: 100%;
+    justify-content: space-between;
+    height: 100px;
+    background-color: #27ae60;
+    display: flex;
+    color: #fff;
+    padding: 0 10%;
+    align-items: center;
+}
+
+.elem {
+    width: auto; /* Adjusted to fit dynamically */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.box {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
+#pbtm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    width: 100%;
+    height: calc(100% - 100px);
+    background-color: #f8f9fa;
+}
+
+/* Bubbles */
+.bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #f39c12;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 18px;
+    transition: transform 0.2s, background-color 0.3s ease;
+}
+
+.bubble:hover {
+    background-color: #d35400;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.bubble:active {
+    transform: scale(0.9);
+}
+
+/* Restart Button */
+#restart {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#restart:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+#restart:active {
+    background-color: #a93226;
+}
+
+/* Button Styles */
+#themeToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #3498db; /* Light theme button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between text and icon */
+}
+
+#themeToggle.light {
+    background-color: #3498db; /* Light theme button color */
+}
+
+#themeToggle.dark {
+    background-color: #1abc9c; /* Dark theme button color */
+}
+
+/* Hover and Active States */
+#themeToggle:hover {
+    background-color: #2980b9; /* Hover color for light mode */
+}
+
+#themeToggle.dark:hover {
+    background-color: #16a085; /* Hover color for dark mode */
+}
+
+#themeToggle:active {
+    background-color: #1e80c1; /* Active color for light mode */
+}
+
+#themeToggle.dark:active {
+    background-color: #148f77; /* Active color for dark mode */
+}
+
+/* Dark Theme */
+body.dark {
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Dark gradient background */
+}
+
+body.dark #panel {
+    background-color: #2c3e50; /* Dark panel */
+    color: #ecf0f1;
+}
+
+body.dark #ptop {
+    background-color: #1abc9c;
+}
+
+body.dark .elem h2 {
+    color: #ecf0f1;
+}
+
+body.dark .box {
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+body.dark #pbtm {
+    background-color: #34495e; /* Darker background */
+}
+
+body.dark .bubble {
+    background-color: #e67e22; /* Dark theme bubble color */
+}
+
+body.dark .bubble:hover {
+    background-color: #d35400;
+}
+
+body.dark #restart {
+    background-color: #e74c3c; /* Keep the vibrant button */
+}
+
+body.dark #restart:hover {
+    background-color: #c0392b;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media only screen and (max-width: 480px) {
+    body {
+      font-size: 16px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    .box {
+      padding: 10px;
+    }
+    #ptop {
+      padding: 10px 20px;
+    }
+    #pbtm {
+      padding: 10px;
+    }
+    .bubble {
+      width: 40px;
+      height: 40px;
+      font-size: 14px;
+    }
+    #restart {
+      padding: 10px 15px;
+    }
+    #themeToggle {
+      padding: 8px 12px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    body {
+      font-size: 14px;
+    }
+    h2 {
+      font-size: 18px;
+    }
+    .box {
+      padding: 8px;
+    }
+    #ptop {
+      padding: 8px 15px;
+    }
+    #pbtm {
+      padding: 8px;
+    }
+    .bubble {
+      width: 30px;
+      height: 30px;
+      font-size: 12px;
+    }
+    #restart {
+      padding: 8px 12px;
+    }
+    #themeToggle {
+      padding: 6px 10px;
+    }
+}
+
+/* Landscape Mode on Tablets */
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+    #main {
+      flex-direction: column;
+    }
+    #panel {
+      width: 100%;
+      height: auto;
+    }
+    #ptop {
+      width: 100%;
+      height: auto;
+    }
+    #pbtm {
+      width: 100%;
+      height: auto;
+    }
+}
